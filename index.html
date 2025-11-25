@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate Verification DApp</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Web3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <h2 class="title">Certificate Verification DApp</h2>
+
+    <div class="panel-wrapper">
+
+        <!-- LEFT PANEL (Store Certificate) -->
+        <div class="panel left-panel">
+            <h3>Store Certificate (Owner Only)</h3>
+
+            <label class="label">Upload PDF Certificate</label>
+            <input type="file" id="storeFile" accept="application/pdf" onchange="handleStoreFile(event)">
+
+            <input type="text" id="storeHash" placeholder="Generated hash will appear here" readonly>
+            <button onclick="storeCert()">Store Certificate</button>
+        </div>
+
+        <!-- RIGHT PANEL (Verify Certificate) -->
+        <div class="panel right-panel">
+            <h3>Verify Certificate</h3>
+
+            <label class="label">Upload PDF Certificate</label>
+            <input type="file" id="verifyFile" accept="application/pdf" onchange="handleVerifyFile(event)">
+
+            <input type="text" id="verifyHash" placeholder="Generated hash will appear here" readonly>
+            <button onclick="verifyCert()">Verify</button>
+
+            <p id="result"></p>
+        </div>
+
+    </div>
+
+    <button class="connect-btn" onclick="connectWallet()">Connect MetaMask</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+
+</html>
